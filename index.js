@@ -50,7 +50,7 @@ Use the copy function below to do the following:
 function copy(array){
   return [...array];
 }
-console.log(copy(originalFlavors));
+console.log('Task 1', copy(originalFlavors));
 
 
 
@@ -73,7 +73,7 @@ function is31Flavors(flavor){
     return false;
   }
  }
-console.log(is31Flavors(originalFlavors));
+console.log('Task 2', is31Flavors(originalFlavors));
 
 
 
@@ -90,11 +90,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(flavorList, newFlavor){
-  return flavorList.unshift(newFlavor);
+function addFlavor(array, string){
+  array.unshift(string);
+  return array;
  }
- addFlavor(originalFlavors, "Rainbow Sherbert");
- console.log(originalFlavors);
+ 
+ console.log('Task 3', addFlavor(originalFlavors, "Rainbow Sherbert"));
 
 
 
@@ -111,12 +112,11 @@ Use the removeLastFlavor function below to do the following:
 
 
 function removeLastFlavor(flavorList){
- return flavorList.pop();
+ flavorList.pop();
+ return flavorList
 }
 
-removeLastFlavor(originalFlavors);
-console.log(originalFlavors);
-
+console.log('Task 4', removeLastFlavor(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -134,7 +134,7 @@ Use the getFlavorByIndex function below to do the following:
 function getFlavorByIndex(flavors, index){
   return flavors[index];
 }
-console.log(getFlavorByIndex(originalFlavors, 2));
+console.log('Task 5', getFlavorByIndex(originalFlavors, 2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -151,11 +151,16 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(flavors, removedFlavor){
-  return flavors.splice(1, 0, removedFlavor);
+function removeFlavorByName(array, flavor){
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === flavor){
+      array.splice(i, 1);
+    }
+  }
+  return array;
 }
-removeFlavorByName(originalFlavors, "Rocky Road");
-console.log("remove" + originalFlavors.length);
+console.log('Task 6', removeFlavorByName(originalFlavors, "Rocky Road"));
+
 
 
 
@@ -188,7 +193,7 @@ function filterByWord(array, flavor){
   return filteredArray;
 }
 
-console.log(filterByWord(originalFlavors, 'Chocolate'));
+console.log('Task 7', filterByWord(originalFlavors, 'Chocolate'));
 
 
 
